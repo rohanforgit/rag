@@ -1,0 +1,25 @@
+# Environment / Secrets
+.env
+.env.*
+!.env.example
+
+# Python virtual environments
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node / Javascript
+node_modules/
+dist/
+dist-ssr/
+.oxlintrc.json
+
+# OS/System files
+.DS_Store
+Thumbs.db
+.keep
