@@ -49,7 +49,8 @@ interface Session {
   name: string;
 }
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 
+  (typeof window !== 'undefined' && window.location.hostname === 'localhost' ? 'http://localhost:8000' : '/api');
 
 function App() {
   const [sessions, setSessions] = useState<Session[]>(() => {
