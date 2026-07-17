@@ -29,10 +29,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include the routers
+# Include the routers (both direct and prefixed for routing compatibility)
 app.include_router(chat.router, tags=["chat"])
+app.include_router(chat.router, prefix="/api", tags=["chat"])
 
 @app.get("/health")
+@app.get("/api/health")
 async def health_check():
     """Service status health endpoint."""
     return {
